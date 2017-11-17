@@ -1,0 +1,9 @@
+<!--
+   * @author Sonam Dwivedi
+   *
+   * @email sonam.dwivedi59@yahoo.com
+   *
+   * @description "This file is used for flash messages."
+   *
+   -->
+<alert ng-repeat="flashMessage in vm.flash.getMessages()" type="{{ flashMessage.type }}" close="vm.flash.closeMessage($index)" dismiss-on-timeout="{{timeout}}">{{ flashMessage.message }}</alert>

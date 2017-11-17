@@ -1,0 +1,90 @@
+<!--
+   * @author Sonam Dwivedi
+   *
+   * @email sonam.dwivedi59@yahoo.com
+   *
+   * @description "This file is used for breadcrumb."
+   *
+   -->
+<div class="dropdown">
+<loader></loader>
+<button class="dropdown-toggle" id="{{breadCrumsData.resourceType}}DropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+{{breadCrumsData.currentResourceName}} <i class="fa fa-arrow-circle-o-down"></i>
+</button>
+<div ng-show="isSingle"  class="dropdown-menu" aria-labelledby="{{breadCrumsData.resourceType}}DropDown" ng-if="breadCrumsData.resourceType">
+   <div>
+      <div class="row" ng-if="breadCrumsData.currentResourceName">
+         <div class="col-xs-offset-1 col-xs-11 title">
+            <h4>{{breadCrumsData.resourceTitleFull}}</h4>
+            <div class="loading" ng-show="!breadCrumsData.resources">
+               <div class="col-xs-offset-1 col-xs-11">
+                  <i class="fa fa-spinner fa-pulse"></i>
+                  <span class="sr-only">Loading...</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <span ng-repeat="res in breadCrumsData.resources">
+         <a ng-if="res.guid" class="row" ng-click="redirectToResource(breadCrumsData,res.guid)" href="javascript:void(0);">
+            <div class="col-xs-1">
+               <div class="box" ng-style="{ 'background-color': (res.name | iconLetterColor) }">
+                  <div class="icon" ng-style="{ 'background-color': (res.name | iconLetterColor) }">{{res.name | iconLetter}}</div>
+               </div>
+            </div>
+            <div class="col-xs-11 resource-name" ng-bind="res.name"></div>
+         </a>
+         <a ng-if="res.id" class="row" ng-click="redirectToResource(breadCrumsData,res.id)" href="javascript:void(0);">
+            <div class="col-xs-1">
+               <div class="box" ng-style="{ 'background-color': (res.name | iconLetterColor) }">
+                  <div class="icon" ng-style="{ 'background-color': (res.name | iconLetterColor) }">{{res.name | iconLetter}}</div>
+               </div>
+            </div>
+            <div class="col-xs-11 resource-name" ng-bind="res.name"></div>
+         </a>
+      </span>
+   </div>
+</div>
+<div ng-show="!isSingle" class="dropdown-menu double row" aria-labelledby="{{breadCrumsData.resourceType}}DropDown" ng-if="breadCrumsData.resourceType">
+   <div class="col-xs-6">
+      <div class="row">
+         <div class="col-xs-offset-1 col-xs-11 title">
+            <h4>{{breadCrumsData.resource1TitleFull}}</h4>
+         </div>
+      </div>
+      <span ng-repeat="res in breadCrumsData.resources1">
+         <a ng-if="res.guid" class="row" ng-click="redirectToResource1(breadCrumsData.resource1Type,res.guid)" href="javascript:void(0);" >
+            <div class="col-xs-1">
+               <div class="box" ng-style="{ 'background-color': (res.name | iconLetterColor) }">
+                  <div class="icon" ng-style="{ 'background-color': (res.name | iconLetterColor) }">{{res.name | iconLetter}}</div>
+               </div>
+            </div>
+            <div class="col-xs-11 resource-name" ng-bind="res.name"></div>
+         </a>
+      </span>
+      <span ng-show="!breadCrumsData.resources1.length">
+         <div ng-style="{ 'background-color': iconLetterColor }">No App Available</div>
+      </span>
+   </div>
+   <div class="col-xs-6">
+      <div class="row">
+         <div class="col-xs-offset-1 col-xs-11 title">
+            <h4>{{breadCrumsData.resource2TitleFull}}</h4>
+         </div>
+      </div>
+      <span ng-repeat="res in breadCrumsData.resources2">
+         <a ng-if="res.guid" class="row" ng-click="redirectToResource2(breadCrumsData.resource2Type,res.guid, res.userProvided)" href="javascript:void(0);">
+            <div class="col-xs-1">
+               <div class="box" ng-style="{ 'background-color': (res.name | iconLetterColor) }">
+                  <div class="icon" ng-style="{ 'background-color': (res.name | iconLetterColor) }">
+                     {{res.name | iconLetter}}
+                  </div>
+               </div>
+            </div>
+            <div class="col-xs-11 resource-name" ng-bind="res.name"></div>
+         </a>
+      </span>
+      <span ng-show="!breadCrumsData.resources2.length">
+         <div ng-style="{ 'background-color': iconLetterColor }">No Service Available</div>
+      </span>
+   </div>
+</div>

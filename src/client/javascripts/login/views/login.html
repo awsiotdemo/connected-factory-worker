@@ -1,0 +1,69 @@
+  <!--  /**
+    * @author Sonam Dwivedi
+    *
+    * @email sonam.dwivedi59@yahoo.com
+    *
+    * @description "This file is used for showing login page."
+    *
+    -->
+<div class="login-body-img-parent">
+   <div class="login-body-image">
+      <div class="login-centered">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4">
+                  <!--<div class="language-box-margin">
+                     <select ng-options="language |  for language in languages" ng-model="language" ng-change="updateLanguage(language)" class="select-language"></select>
+                  </div>-->
+                  <div class="panel" id="login">
+                     <div class="header-centered">
+                        <div class="logo">  
+                        </div>
+                        <hr class="logo-bottom-hr"/>
+                     </div>
+                     <div class="welocme-msg "><span>Welcome to Connected Factory Workers</span></div>
+                     <div id="login-content">
+                        <div class="panel-body">
+                           <form class="form-horizontal" role="form" name="formLogin" ng-submit="login()">
+                              <div class="form-group">
+                                 <flash-messages timeout="{{flashTimeOut}}"></flash-messages>
+                              </div>
+                              <div class="form-group">
+                                 <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="input-group">
+                                       <span class="input-group-addon"><img class="icon-height" src="/images/envelope.png" alt=""/></span>
+                                       <input id="email" name="email" type="text" class="form-control login-input-fields" placeholder="Username" required ng-model="loginData.username">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="input-group">
+                                       <span class="input-group-addon"><img class="icon-height" src="/images/lock.png" alt=""/></span>
+                                       <input type="password" class="form-control login-input-fields" placeholder="Password" required ng-model="loginData.password">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <button type="submit" class="btn login-btn-color" ng-disabled="formLogin.$invalid || submitted.login">Login</button>
+                                 </div>
+                              </div>
+                              <!--<div class="form-group">
+                                 <div class="col-sm-12 col-md-12 col-lg-12">                    
+                                    <a href="javascript: void(0);"  ng-click="forgotPwd()" class="trouble-logging"><span >reset_pwd</span></a>
+                                 </div>
+                              </div>-->
+                           </form>
+                        </div>
+                        <div class="footer-login">
+                           © Connected Factory Workers {{year}}. All Rights Reserved. 
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

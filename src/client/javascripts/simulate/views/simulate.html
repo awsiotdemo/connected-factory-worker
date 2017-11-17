@@ -1,0 +1,101 @@
+<section class="marginTop section-row special-background services">
+<div class="breadcrumb">
+    <i class="fa fa-bar-chart"></i> <a href="javascript: void(0);" ><span> Simulate Readings</span></a>
+    <div class="delete-org pull-right">
+      <div>
+          <button type="submit" class="btn btn-xs btn-info" id="delete-org" ng-click="dashboard();">
+          <i class="fa fa-tachometer"></i>
+          <span translate>Back to Dashboard</span>
+          </button>     
+      </div>
+    </div>
+</div>
+<div class="alert-top-adjust">
+      <flash-messages timeout="{{flashTimeOut}}" class="alert-top-adjust"></flash-messages>
+</div>
+   <div class="container">
+      <div class="row">
+            <div class="col-lg-6">
+                  <form name="simulateForm" id="simulate" autocomplete="off" class="form full-width" novalidate>
+                        <div class="form-group">
+                        <div class="right-inner-addon">
+                              <label > Heart-rate</label>
+                              <input id="heart_rate" class="form-control fade-label" type="number" min="40" max="130" name="heart_rate" placeholder= "Heart-rate" ng-model="user.heartrate"/>
+                        </div>
+                        <span class="error-message" ng-show="simulateForm.heart_rate.$error.min || simulateForm.heart_rate.$error.max">Heart-rate value between 40 and 130.</span>
+                        </div>
+                        <div class="form-group">
+                        <div class="right-inner-addon">
+                              <label> Temperature</label>
+                              <input class="form-control fade-label" type="number" min="91" max="103" name="temperature" placeholder= "Temperature"  ng-model="user.temperature"/>
+                              </span>
+                        </div>
+                        <span class="error-message" ng-show="simulateForm.temperature.$error.min || simulateForm.temperature.$error.max">Temperature value between 91 and 103.</span>
+                        </div>
+                        <div class="form-group">
+                        <div class="right-inner-addon">
+                              <label > Breathing-rate</label>
+                              <input class="form-control fade-label" type="number" min="10" max="30" name="breathing" placeholder= "Breathing-rate"  ng-model="user.breathing"/>
+                        </div>
+                        <span class="error-message" ng-show="simulateForm.breathing.$error.min || simulateForm.breathing.$error.max">Breathing-rate value between 10 and 30.</span>
+                        </div>
+                        <div class="form-group">
+                        <div class="right-inner-addon">
+                              <label >Activity</label>
+                              <input type="number" class="form-control fade-label" min="1" max="3" ng-model="user.activity" name="activity" placeholder= "Activity"/>
+                              </span>
+                        </div>
+                        <span class="error-message" ng-show="simulateForm.activity.$error.min || simulateForm.activity.$error.max">Activity value between 0.21 and 0.60.</span>
+                        </div>
+                        <div class="form-group">
+                        <div class="right-inner-addon">
+                              <label > Cadence</label>
+                              <input type="number" class="form-control fade-label" min="7" max="40" ng-model="user.cadence" name="cadence" placeholder= "cadence"/>
+                              </span>
+                        <span class="error-message" ng-show="simulateForm.cadence.$error.min && simulateForm.cadence.$error.max">Cadence value between 7 and 40.</span>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                        <button class="btn btn-success form-control set" ng-disabled="simulateForm.$invalid" type="submit" ng-click="submitSimulateData()">
+                        <span><i class=""></i></span>Submit</button>
+                        </div>
+                  </form>
+            </div>
+            <div class="col-lg-6">
+                  <div class="row">
+                        <div class="col-md-3">
+                             <div class="trafficlight">
+                                    <div class="protector"></div>
+                                    <div class="protector"></div>
+                                    <div class="protector"></div>
+                                    <div class="red" id="red"></div>
+                                    <div class="yellow" id="yellow"></div>
+                                    <div class="green" id="green"></div>
+                              </div>
+                        </div>
+                        <div class="col-md-3">
+                              <div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div id="alert_danger" class=" form full-width form-group right-inner-addon alert-red" style="visibility: hidden;">
+                                          <label>Please take rest as your body temperature is high</label>
+                                    </div>
+                                    <div id="alert_normal" class=" form full-width form-group right-inner-addon alert-yellow" style="visibility: hidden;">
+                                          <label>You ar not exhausted.</label>
+                                    </div>
+                                    <div id="alert_sucess" class=" form full-width form-group right-inner-addon">
+                                          <input id = "success_btn" type="button" class="btn warning checked-check" value="Rest Taken" style="visibility: hidden;">
+                                          <label id = "success_msg" class="alert-green" style="visibility: hidden;">You are authorize to resume work</label>
+                                          <audio id="myAudio">
+                                                <source src="https://s3.amazonaws.com/cfworkerwearable-s3bucket/john.mp3" type="audio/mp3">
+                                          </audio>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      
+   </div>
+</section>

@@ -1,0 +1,52 @@
+
+<section class="marginTop section-row special-background services">
+  <div class="breadcrumb">
+      <i class="fa fa-tachometer"></i> <a href="javascript: void(0);" ><span>Dashboard</span></a>
+      <div class="delete-org pull-right">
+        <div>
+            <button type="submit" class="btn btn-xs btn-info" id="delete-org" ng-click="simulateReadings();">
+            <i class="fa fa-bar-chart"></i>
+            <span translate>Simulate readings</span>
+            </button>     
+        </div>
+      </div>
+  </div>
+  <div class="alert-top-adjust">
+      <flash-messages timeout="{{flashTimeOut}}" class="alert-top-adjust"></flash-messages>
+  </div>
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-lg-6 temp-div">
+        <!--<div class="col-xs-12">
+          <h3>Temperature</h3>
+          <hr />
+        </div>-->
+        <div id="temp"></div>
+      </div>
+      <div class="col-lg-6 ventilation-div">
+        <!--<div class="col-xs-12">
+          <h3>Cadence</h3>
+          <hr />
+        </div>-->
+        <div id="Cadence"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 temp-div">
+        <!--<div class="col-xs-12">
+          <h3>Breathing Rates/per minute</h3>
+          <hr />
+        </div>-->
+        <div id="breathing"></div>
+      </div>
+      <div class="col-lg-6 ventilation-div">
+        <!--<div class="col-xs-12">
+          <h3>Heart Rates/per minute</h3>
+          <hr />
+        </div>-->
+        <div id="heart"></div>
+      </div>
+    </div>
+  </div>
+</section>
